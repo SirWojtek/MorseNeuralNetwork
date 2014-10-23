@@ -11,6 +11,7 @@ Take notice that line above also install couple of useful things like matplotlib
 PyBrain in included in this git repo as submodule in root of project in /pybrain folder. Before first use you must intall it:
 
 >cd pybrain
+>
 >sudo python setup.py install
 
 After this step you can use pybrain for running neural networks.
