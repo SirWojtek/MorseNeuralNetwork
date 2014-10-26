@@ -15,3 +15,13 @@ PyBrain in included in this git repo as submodule in root of project in /pybrain
 >sudo python setup.py install
 
 After this step you can use pybrain for running neural networks.
+#####3. FontLoader#####
+FontLoader class converts all letters from font .ttf file into bite array. 
+
+PIL module is necessary:
+
+>sudo apt-get install python-imaging
+
+or
+
+>pip install -U PIL
