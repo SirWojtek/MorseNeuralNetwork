@@ -1,11 +1,14 @@
 #!/usr/bin/python
-
 from pybrain.structure import FeedForwardNetwork
-
+from FontLoader import *
 
 def main():
 	n = FeedForwardNetwork()
-	print n
+	fl = FontLoader('pixelmix.ttf', 8)
+	fonts = fl.getLetters()
+	A = fonts[0]
+
+	print A
 
 if __name__ == '__main__':
 	main()
