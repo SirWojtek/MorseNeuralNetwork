@@ -38,3 +38,9 @@ class LearningData:
 		for row in letterMatrix:
 			count += len(row)
 		return count
+
+	def __iter__(self):
+		return self._dataset
+
+	def next(self):
+		return self._dataset.next()
