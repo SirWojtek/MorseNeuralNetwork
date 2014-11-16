@@ -8,15 +8,23 @@ class PerceptronNetworkManager:
         self._fontSize = fontSize
         self._morseSize = morseSize
         self._initBuilders()
-        self._data = self._dataBuilder.getLearningData()
+        self._learningData = self._dataBuilder.getLearningData()
         self._network = self._networkBuilder.buildSimpleNetwork()
 
     def _initBuilders(self):
         self._dataBuilder = LearningDataBuilder(self._fontPath, self._fontSize, self._morseSize)
-        #It seems that fonts are not sized like 8x8 or 16x16 but 7x6 or 14x12
         self._networkBuilder = PerceptronNetworkBuilder(
             self._fontSize * self._fontSize, self._morseSize)
 
-    def runNetwork(self):
-        for data in self._data:
-            self._network.run(data)
+    def trainNetwork(self):
+        self._network.train(self._learningData)
+
+    def runNetworkOnce(self, inputData):
+        return self._network.run(inputData)
+
+    def runNetwork(self, inputDataSet):
+        outputSet = list()
+        for data in inputDataSet:
+            result = self.runNetworkOnce(data)
+            outputSet.append(result)
+        return outputSet

@@ -27,7 +27,34 @@ def main():
 
 
 if __name__ == '__main__':
+    fontPath = 'LearningData/fonts/pixelmix.ttf'
     fontSize = 8
     morseSize = 4
-    manager = PerceptronNetworkManager('LearningData/fonts/pixelmix.ttf', fontSize, morseSize)
-    manager.runNetwork()
+    inputSet = [[0, 1, 1, 1, 0, 0, 0, 0,
+                 1, 0, 0, 0, 1, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 1, 0, 0, 0, 1, 0, 0, 0,
+                 0, 1, 1, 1, 0, 0, 0, 0,
+                 0, 0, 0, 0, 0, 0, 0, 0],
+                [1, 1, 1, 1, 0, 0, 0, 0,
+                 1, 0, 0, 0, 1, 0, 0, 0,
+                 1, 0, 0, 0, 1, 0, 0, 0,
+                 1, 1, 1, 1, 0, 0, 0, 0,
+                 1, 0, 0, 0, 1, 0, 0, 0,
+                 1, 0, 0, 0, 1, 0, 0, 0,
+                 1, 1, 1, 1, 0, 0, 0, 0,
+                 0, 0, 0, 0, 0, 0, 0, 0],
+                [1, 1, 1, 1, 1, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 1, 1, 1, 1, 0, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 1, 0, 0, 0, 0, 0, 0, 0,
+                 0, 0, 0, 0, 0, 0, 0, 0]]
+    manager = PerceptronNetworkManager(fontPath, fontSize, morseSize)
+    manager.trainNetwork()
+    result = manager.runNetwork(inputSet)
+    print result

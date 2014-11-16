@@ -25,6 +25,9 @@ class LearningData:
     def getOutputSize(self):
         return self._outputSize
 
+    def getDataSet(self):
+        return self._dataset
+
     @staticmethod
     def _convertToTable(letterMatrix):
         letterTable = []
@@ -40,7 +43,7 @@ class LearningData:
         return count
 
     def __iter__(self):
-        return self._dataset
+        return self._dataset.__iter__()
 
     def next(self):
         return self._dataset.next()

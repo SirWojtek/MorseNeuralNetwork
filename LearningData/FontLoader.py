@@ -33,5 +33,6 @@ class FontLoader:
 
 
 if __name__ == '__main__':
-    fl = FontLoader('fonts/pixelmix.ttf', 16)
+    fl = FontLoader('fonts/pixelmix.ttf', 8)
     letters = fl.getLetters()
+    print letters['A']
