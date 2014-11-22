@@ -24,6 +24,9 @@ class PerceptronNetwork:
         trainer = BackpropTrainer(self._network, learningData.getDataSet())
         trainer.trainUntilConvergence()
 
+    def reset(self):
+        self._network.reset()
+
     def run(self, data):
         result = self._network.activate(data)
         return self._roundResult(result)
