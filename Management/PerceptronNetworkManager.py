@@ -16,8 +16,16 @@ class PerceptronNetworkManager:
         self._networkBuilder = PerceptronNetworkBuilder(
             self._fontSize * self._fontSize, self._morseSize)
 
+    def setHiddenLayerNeurons(self, hiddenLayerNeurons):
+        self._network = self._networkBuilder.buildSimpleNetwork(hiddenLayerNeurons)
+
+    def getTrainingData(self):
+        return self._learningData
+
     def trainNetwork(self):
+        print 'Start training network...'
         self._network.train(self._learningData)
+        print 'Finished training network!'
 
     def runNetworkOnce(self, inputData):
         return self._network.run(inputData)

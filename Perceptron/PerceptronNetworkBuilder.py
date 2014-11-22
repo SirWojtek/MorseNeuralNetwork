@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from PerceptronNetwork import *
+from pybrain.tools.shortcuts import buildNetwork
 
 class PerceptronNetworkBuilder:
 
@@ -8,5 +9,5 @@ class PerceptronNetworkBuilder:
         self._outputSize = outputSize
 
     def buildSimpleNetwork(self, hiddenLayerNeurons = 20):
-        return PerceptronNetwork(self._inputSize,
-            hiddenLayerNeurons, self._outputSize)
+        return PerceptronNetwork(
+            buildNetwork(self._inputSize, hiddenLayerNeurons, self._outputSize))

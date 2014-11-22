@@ -1,15 +1,10 @@
 #!/usr/bin/python
-from pybrain.tools.shortcuts import buildNetwork
 from pybrain.supervised.trainers import BackpropTrainer
-
 
 class PerceptronNetwork:
 
-    def __init__(self, inputSize, hiddenLayerNeurons, outputSize):
-        self._inputSize = inputSize
-        self._outputSize = outputSize
-        self._network = buildNetwork(self._inputSize,
-            hiddenLayerNeurons, self._outputSize)
+    def __init__(self, network):
+        self._network = network
 
     def _roundResult(self, result):
         out = list()
@@ -21,12 +16,6 @@ class PerceptronNetwork:
                 temp = 0
             out.append(temp)
         return out
-
-    def getInputSize(self):
-        return self._inputSize
-
-    def getOutputSize(self):
-        return self._outputSize
 
     def getNetwork(self):
         return self._network
