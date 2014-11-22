@@ -1,5 +1,6 @@
 from Perceptron.PerceptronNetworkBuilder import *
 from LearningData.LearningDataBuilder import *
+from LearningData.LearningData import *
 
 class PerceptronNetworkManager:
 
@@ -25,6 +26,6 @@ class PerceptronNetworkManager:
     def runNetwork(self, inputDataSet):
         outputSet = list()
         for data in inputDataSet:
-            result = self.runNetworkOnce(data)
+            result = self.runNetworkOnce(LearningData.convertToTable(data))
             outputSet.append(result)
         return outputSet

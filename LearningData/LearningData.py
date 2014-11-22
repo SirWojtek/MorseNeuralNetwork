@@ -9,7 +9,7 @@ class LearningData:
         self._dataset = SupervisedDataSet(inputSize, outputSize)
 
     def addLetter(self, letterMatrix, morseCode):
-        letterTable = self._convertToTable(letterMatrix)
+        letterTable = self.convertToTable(letterMatrix)
         self._checkForSizeError(len(letterTable), len(morseCode))
         self._dataset.addSample(letterTable, morseCode)
 
@@ -29,7 +29,7 @@ class LearningData:
         return self._dataset
 
     @staticmethod
-    def _convertToTable(letterMatrix):
+    def convertToTable(letterMatrix):
         letterTable = []
         for row in letterMatrix:
             letterTable.extend(row)

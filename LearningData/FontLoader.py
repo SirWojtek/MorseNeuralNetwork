@@ -30,9 +30,3 @@ class FontLoader:
             for i in range(0, widthDiff):
                 letter = numpy.vstack((letter, [0]*len(letter[0])))
         return letter
-
-
-if __name__ == '__main__':
-    fl = FontLoader('fonts/pixelmix.ttf', 8)
-    letters = fl.getLetters()
-    print letters['A']
