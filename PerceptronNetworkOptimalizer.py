@@ -27,6 +27,14 @@ class PerceptronNetworkOptimalizer:
             eff = self.singleRun()
             print 'Network with %d hidden neurons has %f %% good predictions' % (i + 1, eff)
 
+    def testLinSigLinNetworkWithoutBiasWithChangingHiddenLayerNeurons(self, maxNeurons):
+        for i in range(maxNeurons):
+            net = self._networkBuilder.buildLinSigLinNetworkWithoutBias(i + 1)
+            self._manager.setNetwork(net)
+            self._manager.trainNetwork()
+            eff = self.singleRun()
+            print 'Network with %d hidden neurons and bias has %f %% good predictions' % (i + 1, eff)
+
     def testWithChangingBackPropLearningrate(self, delta):
         i = delta
 
@@ -71,4 +79,12 @@ class PerceptronNetworkOptimalizer:
         return Counter(a) == Counter(b)
 
 if __name__ == '__main__':
-    PerceptronNetworkOptimalizer().testWithChangingBackPropWeightDecay(0.1)
+    opt = PerceptronNetworkOptimalizer()
+    opt.testLinSigLinNetworkWithChangingHiddenLayerNeurons(25)
+    opt.testLinSigLinNetworkWithoutBiasWithChangingHiddenLayerNeurons(25)
+    opt.testWithChangingBackPropLearningrate(0.1)
+    opt.testWithChangingBackPropMomentum(0.1)
+    opt.testWithChangingBackPropWeightDecay(0.1)
+
+    # TODO: test high LR and lrcDelay < 1
+    # TODO: test low LR and lrcDelay > 1

@@ -33,18 +33,18 @@ class PerceptronNetworkManager:
         return self._learningData
 
     def trainNetwork(self):
-        print 'Start training network...'
+        # print 'Start training network...'
         self._network.train(self._learningData)
-        print 'Finished training network!'
+        # print 'Finished training network!'
 
     def trainWithParameters(self, learningRate = 0.01,
         momentum = 0.0, weightDecay = 0.0):
         trainer = BackpropTrainer(self._network.getNetwork(),
             self._learningData.getDataSet(), learningrate = learningRate,
             momentum = momentum, weightdecay = weightDecay)
-        print 'Start training network...'
+        # print 'Start training network...'
         trainer.trainUntilConvergence()
-        print 'Finished training network!'
+        # print 'Finished training network!'
 
     def runNetworkOnce(self, inputData):
         return self._network.run(inputData)
