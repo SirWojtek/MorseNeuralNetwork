@@ -1,0 +1,56 @@
+Network with 1 hidden neurons has 58.333333 % good predictions
+Network with 2 hidden neurons has 33.333333 % good predictions
+Network with 3 hidden neurons has 50.000000 % good predictions
+Network with 4 hidden neurons has 25.000000 % good predictions
+Network with 5 hidden neurons has 33.333333 % good predictions
+Network with 6 hidden neurons has 66.666667 % good predictions
+Network with 7 hidden neurons has 8.333333 % good predictions
+Network with 8 hidden neurons has 75.000000 % good predictions
+Network with 9 hidden neurons has 16.666667 % good predictions
+Network with 10 hidden neurons has 50.000000 % good predictions
+Network with 11 hidden neurons has 66.666667 % good predictions
+Network with 12 hidden neurons has 50.000000 % good predictions
+Network with 13 hidden neurons has 41.666667 % good predictions
+Network with 14 hidden neurons has 16.666667 % good predictions
+Network with 15 hidden neurons has 58.333333 % good predictions
+Network with 16 hidden neurons has 75.000000 % good predictions
+Network with 17 hidden neurons has 25.000000 % good predictions
+Network with 18 hidden neurons has 25.000000 % good predictions
+Network with 19 hidden neurons has 75.000000 % good predictions
+Network with 20 hidden neurons has 41.666667 % good predictions
+Network with 21 hidden neurons has 75.000000 % good predictions
+Network with 22 hidden neurons has 58.333333 % good predictions
+Network with 23 hidden neurons has 75.000000 % good predictions
+Network with 24 hidden neurons has 16.666667 % good predictions
+Network with 25 hidden neurons has 33.333333 % good predictions
+Network with 1 hidden neurons and bias has 41.666667 % good predictions
+Network with 2 hidden neurons and bias has 50.000000 % good predictions
+Network with 3 hidden neurons and bias has 16.666667 % good predictions
+Network with 4 hidden neurons and bias has 58.333333 % good predictions
+Network with 5 hidden neurons and bias has 25.000000 % good predictions
+Network with 6 hidden neurons and bias has 25.000000 % good predictions
+Network with 7 hidden neurons and bias has 33.333333 % good predictions
+Network with 8 hidden neurons and bias has 75.000000 % good predictions
+Network with 9 hidden neurons and bias has 41.666667 % good predictions
+Network with 10 hidden neurons and bias has 58.333333 % good predictions
+Network with 11 hidden neurons and bias has 66.666667 % good predictions
+Network with 12 hidden neurons and bias has 75.000000 % good predictions
+Network with 13 hidden neurons and bias has 25.000000 % good predictions
+Network with 14 hidden neurons and bias has 75.000000 % good predictions
+Network with 15 hidden neurons and bias has 75.000000 % good predictions
+Network with 16 hidden neurons and bias has 58.333333 % good predictions
+Network with 17 hidden neurons and bias has 41.666667 % good predictions
+Network with 18 hidden neurons and bias has 83.333333 % good predictions
+Network with 19 hidden neurons and bias has 83.333333 % good predictions
+Network with 20 hidden neurons and bias has 50.000000 % good predictions
+Network with 21 hidden neurons and bias has 58.333333 % good predictions
+Network with 22 hidden neurons and bias has 100.000000 % good predictions
+Network with 23 hidden neurons and bias has 83.333333 % good predictions
+Network with 24 hidden neurons and bias has 41.666667 % good predictions
+Network with 25 hidden neurons and bias has 66.666667 % good predictions
+Network with 0.100000 learning rate has 58.333333 % good predictions
+Network with 0.200000 learning rate has 33.333333 % good predictions
+Network with 0.300000 learning rate has 58.333333 % good predictions
+Network with 0.400000 learning rate has 50.000000 % good predictions
+Network with 0.500000 learning rate has 58.333333 % good predictions
+Network with 0.600000 learning rate has 83.333333 % good predictions
