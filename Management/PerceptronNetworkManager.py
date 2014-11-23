@@ -18,6 +18,13 @@ class PerceptronNetworkManager:
         self._networkBuilder = PerceptronNetworkBuilder(
             self._fontSize * self._fontSize, self._morseSize)
 
+    def _isMatrix(self, data):
+        try:
+            data[0][0]
+            return True
+        except IndexError:
+            return False
+
     def setHiddenLayerNeurons(self, hiddenLayerNeurons):
         self._network = self._networkBuilder.buildSimpleNetwork(hiddenLayerNeurons)
 
@@ -49,6 +56,9 @@ class PerceptronNetworkManager:
     def runNetwork(self, inputDataSet):
         outputSet = list()
         for data in inputDataSet:
-            result = self.runNetworkOnce(LearningData.convertToTable(data))
+            if self._isMatrix(data):
+                result = self.runNetworkOnce(LearningData.convertToTable(data))
+            else:
+                result = self.runNetworkOnce(data)
             outputSet.append(result)
         return outputSet
