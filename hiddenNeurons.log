@@ -1,0 +1,50 @@
+Network with 1 hidden neurons has 33.333333 % good predictions
+TrainingErr: 0.078132   ValidationErr: 0.077284
+Network with 2 hidden neurons has 41.666667 % good predictions
+TrainingErr: 0.090791   ValidationErr: 0.089121
+Network with 3 hidden neurons has 83.333333 % good predictions
+TrainingErr: 0.018552   ValidationErr: 0.018155
+Network with 4 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.001641   ValidationErr: 0.001589
+Network with 5 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000013   ValidationErr: 0.000013
+Network with 6 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 7 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 8 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 9 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 10 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 11 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 12 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 13 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 14 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 15 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 16 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 17 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 18 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 19 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 20 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 21 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 22 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 23 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 24 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 25 hidden neurons has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
