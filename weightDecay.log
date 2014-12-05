@@ -1,0 +1,22 @@
+Network with 0.000000 weight decay has 100.000000 % good predictions
+TrainingErr: 0.000000   ValidationErr: 0.000000
+Network with 0.100000 weight decay has 66.666667 % good predictions
+TrainingErr: 0.054679   ValidationErr: 0.051715
+Network with 0.200000 weight decay has 58.333333 % good predictions
+TrainingErr: 0.083850   ValidationErr: 0.077950
+Network with 0.300000 weight decay has 25.000000 % good predictions
+TrainingErr: 0.093472   ValidationErr: 0.088599
+Network with 0.400000 weight decay has 16.666667 % good predictions
+TrainingErr: 0.106922   ValidationErr: 0.101583
+Network with 0.500000 weight decay has 50.000000 % good predictions
+TrainingErr: 0.106050   ValidationErr: 0.100509
+Network with 0.600000 weight decay has 16.666667 % good predictions
+TrainingErr: 0.111076   ValidationErr: 0.104179
+Network with 0.700000 weight decay has 16.666667 % good predictions
+TrainingErr: 0.122079   ValidationErr: 0.117608
+Network with 0.800000 weight decay has 16.666667 % good predictions
+TrainingErr: 0.120949   ValidationErr: 0.115415
+Network with 0.900000 weight decay has 8.333333 % good predictions
+TrainingErr: 0.112722   ValidationErr: 0.107418
+Network with 1.000000 weight decay has 41.666667 % good predictions
+TrainingErr: 0.121672   ValidationErr: 0.112884
