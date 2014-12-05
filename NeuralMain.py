@@ -57,6 +57,5 @@ if __name__ == '__main__':
                  [1, 0, 0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0, 0, 0]]]
     manager = PerceptronNetworkManager(fontPath, fontSize, morseSize)
-    manager.trainNetwork()
-    result = manager.runNetwork(inputSet)
-    print result
+    manager.trainWithParameters()
+    # network trained this way give best results!

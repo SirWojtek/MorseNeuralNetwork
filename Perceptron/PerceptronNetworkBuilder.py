@@ -13,7 +13,7 @@ class PerceptronNetworkBuilder:
         return PerceptronNetwork(
             buildNetwork(self._inputSize, hiddenLayerNeurons, self._outputSize))
 
-    def buildLinSigLinNetwork(self, hiddenLayerNeurons):
+    def buildLinSigLinNetwork(self, hiddenLayerNeurons = 15):
         return PerceptronNetwork(
             buildNetwork(self._inputSize, hiddenLayerNeurons, self._outputSize,
                 hiddenclass = SigmoidLayer, outclass = LinearLayer))

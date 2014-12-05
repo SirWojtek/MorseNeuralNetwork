@@ -11,7 +11,7 @@ class PerceptronNetworkManager:
         self._morseSize = morseSize
         self._initBuilders()
         self._learningData = self._dataBuilder.getLearningData()
-        self._network = self._networkBuilder.buildSimpleNetwork(20)
+        self._network = self._networkBuilder.buildLinSigLinNetwork()
 
     def _initBuilders(self):
         self._dataBuilder = LearningDataBuilder(self._fontPath, self._fontSize, self._morseSize)
@@ -40,15 +40,13 @@ class PerceptronNetworkManager:
     def getTrainingData(self):
         return self._learningData
 
-    def trainWithParameters(self, learningRate = 0.01,
+    def trainWithParameters(self, learningRate = 0.2,
         momentum = 0.0, weightDecay = 0.0):
         trainer = BackpropTrainer(self._network.getNetwork(),
             learningrate = learningRate,
             momentum = momentum, weightdecay = weightDecay)
-        # print 'Start training network...'
-        trainer.trainUntilConvergence(trainingData=self._learningData.getDataSet(),
+        return trainer.trainUntilConvergence(trainingData=self._learningData.getDataSet(),
             validationData=self._learningData.getDataSet())
-        # print 'Finished training network!'
 
     def runNetworkOnce(self, inputData):
         return self._network.run(inputData)
