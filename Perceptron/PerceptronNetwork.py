@@ -15,7 +15,7 @@ class PerceptronNetwork:
             if temp < 0:
                 temp = 0
             out.append(temp)
-        return out
+        return tuple(out)
 
     def getNetwork(self):
         return self._network

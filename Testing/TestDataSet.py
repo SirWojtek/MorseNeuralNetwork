@@ -16,23 +16,15 @@ def addNoise(letterMatrix, noiseSize, replace=1):
         tempMatrix[item[1]][item[2]] = int(not(replace))
     return tempMatrix
 
-def cutUp(letterMatrix, numberOfRows=1):
+def cut(letterMatrix, rowsToCut):
     tempMatrix = numpy.copy(letterMatrix)
-    for i, row in enumerate(tempMatrix):
-        if i >= numberOfRows:
-            continue
-        for j, bit in enumerate(row):
-            tempMatrix[i][j] = 0
-    return tempMatrix
-
-def cutDown(letterMatrix, numberOfRows=1):
-    tempMatrix = numpy.copy(letterMatrix)
-    size = len(tempMatrix)
-    for i, row in enumerate(tempMatrix):
-        if i < size-numberOfRows:
-            continue
-        for j, bit in enumerate(row):
-            tempMatrix[i][j] = 0
+    probabilities = list()
+    for i in range(tempMatrix.shape[0]):
+        probabilities.append((numpy.random.random(), i))
+    probabilities.sort(reverse=True)
+    for item in probabilities[:rowsToCut]:
+        for i, bit in enumerate(tempMatrix[item[1]]):
+            tempMatrix[item[1]][i] = 0
     return tempMatrix
 
 class TestDataSet:
@@ -54,6 +46,13 @@ class TestDataSet:
             'Y' : (1, 0, 1, 1), 'Z' : (1, 1, 0, 0),
         }
 
+    def getLetters(self):
+        letters = list()
+        for letter in self._morseCode:
+            if letter in self._morseCode and len(self._morseCode[letter]) == self._morseSize:
+                letters.append(letter)
+        return sorted(letters)
+
     def singleLetterWithNoise(self, letter, noise, replace=1):
         dataSet = list()
         for i in range(self._dataSetSize):
@@ -66,14 +65,12 @@ class TestDataSet:
             dataSet.append((self._letters[letter], self._morseCode[letter]))
         return dataSet
 
-    # @param cutType 'up' or 'down'
-    def singleLetterCut(self, letter, cutType='up', rowsToCut=1):
+    def singleLetterCut(self, letter, rowsToCut):
+        if rowsToCut < 0 and rowsToCut > self._fontSize():
+            raise ValueError('Row number to cut do not match font size!')
         dataSet = list()
         for i in range(self._dataSetSize):
-            if cutType == 'up':
-                dataSet.append((cutUp(self._letters[letter], rowsToCut), self._morseCode[letter]))
-            else:
-                dataSet.append((cutDown(self._letters[letter], rowsToCut), self._morseCode[letter]))
+            dataSet.append((cut(self._letters[letter], rowsToCut), self._morseCode[letter]))
         return dataSet
 
     def lettersWithNoise(self, letters, noise, replace=1):
@@ -81,7 +78,7 @@ class TestDataSet:
         for i in range(self._dataSetSize):
             data = dict()
             for letter in letters:
-                data[letter] = self.singleLetterWithNoise(letter, noise, replace)
+                data[letter] = (addNoise(self._letters[letter], noise, replace), self._morseCode[letter])
             dataSet.append(data)
         return dataSet
 
@@ -94,11 +91,11 @@ class TestDataSet:
             dataSet.append(data)
         return dataSet
 
-    def lettersCut(self, letters, cutType='up', rowsToCut=1):
+    def lettersCut(self, letters, rowsToCut):
         dataSet = list()
         for i in range(self._dataSetSize):
             data = dict()
             for letter in letters:
-                data[letter] = self.singleLetterCut(letter, cutType, rowsToCut)
+                data[letter] = (cut(self._letters[letter], rowsToCut), self._morseCode[letter])
             dataSet.append(data)
         return dataSet

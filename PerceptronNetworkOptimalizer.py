@@ -1,6 +1,7 @@
 #!/usr/bin/python
 from Management.PerceptronNetworkManager import *
 from collections import Counter
+from Testing.TestDataBuilder import  *
 
 class PerceptronNetworkOptimalizer:
 
@@ -10,7 +11,19 @@ class PerceptronNetworkOptimalizer:
         morseSize = 4
         self._manager = PerceptronNetworkManager(fontPath, fontSize, morseSize)
         self._networkBuilder = self._manager.getNetworkBuilder()
-        self._testData = self._manager.getTrainingData().getDataSet()
+        testDataBuilder = TestDataBuilder(fontPath, fontSize, morseSize)
+        letters = testDataBuilder.getDataSet().getLetters()
+        self._testData = self._createTestData(testDataBuilder.getDataSet().lettersWithNoise(letters, 2))
+        #self._testData = self._manager.getTrainingData().getDataSet()
+
+    def _createTestData(self, testData):
+        newTestData = dict()
+        newTestData['target'] = list()
+        newTestData['input'] = list()
+        for letter in testData[0]:
+            newTestData['target'].append(testData[0][letter][1])
+            newTestData['input'].append(testData[0][letter][0])
+        return newTestData
 
     def testLinSigLinNetworkWithChangingHiddenLayerNeurons(self, maxNeurons):
         for i in range(maxNeurons):
@@ -82,11 +95,11 @@ class PerceptronNetworkOptimalizer:
 
 if __name__ == '__main__':
     opt = PerceptronNetworkOptimalizer()
-    # opt.testLinSigLinNetworkWithChangingHiddenLayerNeurons(25)
-    # opt.testLinSigLinNetworkWithoutBiasWithChangingHiddenLayerNeurons(25)
-    # opt.testWithChangingBackPropLearningrate(0.1)
-    # opt.testWithChangingBackPropMomentum(0.1)
-    # opt.testWithChangingBackPropWeightDecay(0.1)
+    #opt.testLinSigLinNetworkWithChangingHiddenLayerNeurons(25)
+    #opt.testLinSigLinNetworkWithoutBiasWithChangingHiddenLayerNeurons(25)
+    #opt.testWithChangingBackPropLearningrate(0.1)
+    #opt.testWithChangingBackPropMomentum(0.1)
+    opt.testWithChangingBackPropWeightDecay(0.1)
 
     # TODO: test high LR and lrcDelay < 1
     # TODO: test low LR and lrcDelay > 1
