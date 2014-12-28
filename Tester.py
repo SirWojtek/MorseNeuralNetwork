@@ -27,7 +27,7 @@ class Tester:
                 file.write(letter + ',' + str(noise) + ',' + str(all) + ',' + str(correct) + ',' + str(wrong) + ',' +  str(proc) + '\n')
         file.close()
 
-    def scenarioWithRandomNoise(self, maxNoiseSize, maxDataSize):
+    def scenarioWithRandomNoise(self, maxNoiseSize, maxDataSize, replace = 1):
         print 'Start scenario with random noise'
         print 'Preparing test data'
         testDataBuilder = TestDataBuilder(self._fontPath, self._fontSize, self._morseSize)
@@ -36,7 +36,7 @@ class Tester:
         print 'Test data ready'
         print 'Start test:'
         for noise in range(maxNoiseSize):
-            testDataSet = testDataBuilder.getDataSet(maxDataSize).lettersWithNoise(letters, noise)
+            testDataSet = testDataBuilder.getDataSet(maxDataSize).lettersWithNoise(letters, noise, replace)
             self.testNetwork(testDataSet, results, noise)
             print str((noise+1)*100/maxNoiseSize) + '%'
         return results
@@ -76,5 +76,7 @@ if __name__ == '__main__':
     tester = Tester()
     result = tester.scenarioWithRandomNoise(10, 1000)
     tester.toCsv('test1.csv', result)
-    result = tester.scenarioWithRandomCut(8, 1000)
+    result = tester.scenarioWithRandomNoise(10, 1000, 0)
     tester.toCsv('test2.csv', result)
+    result = tester.scenarioWithRandomCut(8, 1000)
+    tester.toCsv('test3.csv', result)
